@@ -1,5 +1,6 @@
 const express = require("express");
 const colors = require("colors");
+const contact = require("./backend/routes/api/contact");
 require("dotenv").config();
 
 const app = express();
@@ -13,6 +14,9 @@ app.use(express.json({ extented: true }));
 app.get("/", (req, res) => {
   res.json({ msg: "Api is rinning" });
 });
+
+//other routes
+app.use("/api/contact", contact);
 
 //define a port
 
