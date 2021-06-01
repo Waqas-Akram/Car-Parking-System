@@ -1,0 +1,10 @@
+.link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-top: 0.715rem;
+  padding-bottom: 0.715rem;
+  color: gray;
+  font-size: 15px;
+  display: block;
+  font-weight: bold;
+}
