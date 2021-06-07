@@ -26,15 +26,15 @@ const NavHeader = () => {
       <Navbar
         collapseOnSelect
         expand="lg"
-        style={{ backgroundColor: scrollY ? "gray" : "white" }}
+        style={{ backgroundColor: "white" }}
         variant="dark"
-        className={scrollY ? "p-2" : "p-3"}
-        fixed="top"
+        className={scrollY ? "p-2 shadow" : "p-3"}
+        sticky="top"
       >
         <Container>
           <Navbar.Brand
             style={{
-              color: scrollY ? "white" : "gray",
+              color: "gray",
               fontSize: "25px",
               textAlign: "center",
             }}
@@ -44,24 +44,16 @@ const NavHeader = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav">
             <ReorderIcon
-              style={{ color: scrollY ? "white" : "gray", font: "40px" }}
+              style={{ color: "gray", font: "40px" }}
               className="mt-0 "
             />
           </Navbar.Toggle>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
-              <Link
-                to="/"
-                className="link"
-                style={{ color: scrollY ? "white" : "gray" }}
-              >
+              <Link to="/" className="link" style={{ color: "gray" }}>
                 Home
               </Link>
-              <Link
-                to="/about"
-                className="link"
-                style={{ color: scrollY ? "white" : "gray" }}
-              >
+              <Link to="/about" className="link" style={{ color: "gray" }}>
                 About
               </Link>
             </Nav>
