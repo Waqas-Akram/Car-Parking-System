@@ -1,6 +1,7 @@
 const express = require("express");
 const colors = require("colors");
 const contact = require("./backend/routes/api/contact");
+const sqlconnection = require("./backend/routes/api/sqlconnection");
 const path = require("path");
 require("dotenv").config();
 
@@ -27,6 +28,7 @@ if (process.env.NODE_ENV === "production") {
 
 //other routes
 app.use("/api/contact", contact);
+app.use("/api/sqlconnection", sqlconnection);
 
 //define a port
 
