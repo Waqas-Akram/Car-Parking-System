@@ -56,6 +56,9 @@ const NavHeader = () => {
               <Link to="/about" className="link" style={{ color: "gray" }}>
                 About
               </Link>
+              <Link to="/admin" className="link" style={{ color: "gray" }}>
+                Admin
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
