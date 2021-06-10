@@ -29,4 +29,27 @@ router.get("/timestamps", async (req, res) => {
   });
 });
 
+//delete user by using it's id
+
+router.delete("/delete/:id", async (req, res) => {
+  await pool.query(
+    "DELETE from Registrations where id = ?",
+    [req.params.id],
+    (err, rows) => {
+      pool.release();
+      if (err) throw err;
+      res.status(200).json({ msg: "Successfull deleted" });
+    }
+  );
+});
+
+//get data from Slots
+
+router.get("/slots", async (req, res) => {
+  await pool.query("SELECT * from Slots", (err, rows) => {
+    if (err) throw err;
+    res.json(rows[0]);
+  });
+});
+
 module.exports = router;
