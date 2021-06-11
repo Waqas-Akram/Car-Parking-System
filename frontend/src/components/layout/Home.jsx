@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Jumbotron, Row, Col, Container, Table } from "react-bootstrap";
 import ParkingAnimation from "../animations/parking/ParkingAnimation";
 import axios from "axios";
+import '../../styles/slot-style.css'
 
 const Home = () => {
   const [slots, setSlots] = useState([]);

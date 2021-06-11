@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import Moment from "react-moment";
 
 const TimeLogTable = ({ id, rfid, TimeIn, Status, TimeOut }) => {
   return (
