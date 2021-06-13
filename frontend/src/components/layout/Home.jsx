@@ -2,13 +2,13 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Jumbotron, Row, Col, Container, Table } from "react-bootstrap";
 import ParkingAnimation from "../animations/parking/ParkingAnimation";
 import axios from "axios";
-import '../../styles/slot-style.css'
+import "../../styles/slot-style.css";
 
 const Home = () => {
   const [slots, setSlots] = useState([]);
 
   useEffect(() => {
-    setInterval(() => getSlotsData(), 100);
+    setInterval(() => getSlotsData(), 1000);
   }, []);
 
   const getSlotsData = async () => {
