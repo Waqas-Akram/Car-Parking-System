@@ -10,7 +10,7 @@ const TimeLog = () => {
   const [reg_data, setRegData] = useState([]);
   const [search, setSearch] = useState("");
   useEffect(() => {
-    setInterval(() => getRegData(), 100);
+    setInterval(() => getRegData(), 1000);
   }, []);
 
   const getRegData = async () => {
