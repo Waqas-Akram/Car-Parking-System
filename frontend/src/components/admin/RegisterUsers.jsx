@@ -5,12 +5,19 @@ import SearchIcon from "@material-ui/icons/Search";
 import axios from "axios";
 import ReactToPrint from "react-to-print";
 import PrintIcon from "@material-ui/icons/Print";
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
+import RegisterUser from "../form/RegisterUser";
 
 const RegisterUsers = () => {
   const [reg_data, setRegData] = useState([]);
   const [search, setSearch] = useState("");
+  const [open, setOpen] = useState(false);
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
+
   useEffect(() => {
-    setInterval(() => getRegData(), 100);
+    setInterval(() => getRegData(), 1000);
   }, []);
 
   const getRegData = async () => {
@@ -22,6 +29,9 @@ const RegisterUsers = () => {
   const componentRef = useRef();
   return (
     <Fragment>
+      <Modal open={open} onClose={onCloseModal} center>
+        <RegisterUser />
+      </Modal>
       <Row>
         <Col xs="12" lg="4" md="12" sm="12">
           <div className="input-group md-form form-sm form-1 pl-0 my-5">
@@ -50,7 +60,12 @@ const RegisterUsers = () => {
         </h1>
       </Jumbotron>
       <Row>
-        <Col></Col>
+        <Col>
+          {" "}
+          <Button className="btn-info" onClick={onOpenModal}>
+            Add new user
+          </Button>
+        </Col>
         <Col lg="2" xs="12" md="2" sm="4">
           <ReactToPrint
             trigger={() => (
